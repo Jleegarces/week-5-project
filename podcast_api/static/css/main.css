@@ -27,8 +27,13 @@ body{
 
 ul#horizontal-list{
   min-width: 55vw;
-  list-style: none;
-  padding-top: 2.5vw
+  list-style:none;
+  padding-top: 2.5vw;
+  margin-left:  400px;
+  padding-right: none;
+  margin-right: none;
+  padding-left: 400px;
+  
 }
 
 #horizontal-list li, #horizontal-list a{
@@ -36,6 +41,7 @@ ul#horizontal-list{
   text-decoration: none;
   padding: 0.5vw;
   color:rgb(212, 203, 190);
+  
   
 }
 
