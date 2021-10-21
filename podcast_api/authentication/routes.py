@@ -2,6 +2,7 @@ from flask import Blueprint, render_template, request
 from flask_wtf import form
 from podcast_api.forms import UserLoginForm
 from podcast_api.models import User, db
+from flask_login import login_user, login_required, logout_user
 
 auth = Blueprint('auth', __name__, template_folder='auth_templates')
 
@@ -20,9 +21,10 @@ def signup():
     
     return render_template('signup.html', form = form)
 
-@auth.route('/signin')
+@auth.route('/signin', methods = ['GET', 'POST'])
 def signin():
-    return render_template('signin.html')
+    form = UserLoginForm()
+    return render_template('signin.html', form = form)
 
 @auth.route('/shop')
 def shop():
